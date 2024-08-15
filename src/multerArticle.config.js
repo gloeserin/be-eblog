@@ -1,6 +1,7 @@
-import { join, extname as _extname } from 'path';
-import { existsSync, unlinkSync } from 'fs';
+import path from 'path';
+import fs from 'fs';
 import multer from "multer"
+
 
 // Set storage engine
 const storage = multer.diskStorage({
