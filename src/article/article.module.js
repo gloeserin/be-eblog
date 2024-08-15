@@ -1,6 +1,6 @@
-const {Module} = require("@nestjs/common");
-const {ArticleController} = require("./article.controller");
-const {ArticleService} = require("./article.service");
+import { Module } from "@nestjs/common";
+import { ArticleController } from "./article.controller";
+import { ArticleService } from "./article.service";
 
 @Module({
     controllers: [ArticleController],

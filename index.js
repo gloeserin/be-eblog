@@ -1,2 +1,2 @@
-require('@babel/register');
-require('./src/main');
+import '@babel/register';
+import './src/main';

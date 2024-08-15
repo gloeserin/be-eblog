@@ -1,6 +1,7 @@
-const {Module} = require("@nestjs/common");
-const {CategoryController} = require("./category.controller");
-const {CategoryService} = require("./category.service");
+
+import { Module } from "@nestjs/common";
+import { CategoryController } from "./category.controller";
+import { CategoryService } from "./category.service";
 
 @Module({
     controllers: [CategoryController],

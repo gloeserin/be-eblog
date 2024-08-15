@@ -1,7 +1,7 @@
-// multer.config.js
-const multer = require('multer');
-const path = require('path');
-const fs = require('fs');
+import { join, extname as _extname } from 'path';
+import { existsSync, unlinkSync } from 'fs';
+import multer from "multer"
+
 
 // Set storage engine
 const storage = multer.diskStorage({
@@ -10,10 +10,10 @@ const storage = multer.diskStorage({
   },
   filename: function (req, file, cb) {
     const username = req.body.username;
-    const filePath = path.join('./uploads/article', `${username}-${file.originalname}`);
+    const filePath = join('./uploads/article', `${username}-${file.originalname}`);
 
-    if (fs.existsSync(filePath)) {
-      fs.unlinkSync(filePath);
+    if (existsSync(filePath)) {
+      unlinkSync(filePath);
     }
     //if user didnt upload a file and there is alredy a file with the same name dont cb 
     if (!file.originalname) {
@@ -29,7 +29,7 @@ const storage = multer.diskStorage({
 const fileFilter = (req, file, cb) => {
   const allowedFileTypes = /jpeg|jpg|png|gif/;
   const extname = allowedFileTypes.test(
-    path.extname(file.originalname).toLowerCase()
+    _extname(file.originalname).toLowerCase()
   );
   const mimetype = allowedFileTypes.test(file.mimetype);
 
@@ -47,4 +47,4 @@ const upload = multer({
   limits: { fileSize: 1024 * 1024 * 5 }, // 5 MB file size limit (optional)
 });
 
-module.exports = upload;
+export default upload;

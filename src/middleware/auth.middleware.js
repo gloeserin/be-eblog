@@ -1,4 +1,4 @@
-const { UnauthorizedException } = require('@nestjs/common');
+import { UnauthorizedException } from '@nestjs/common';
 
 class AuthorizationMiddleware {
   use(req, res, next) {
@@ -13,4 +13,4 @@ class AuthorizationMiddleware {
   }
 }
 
-module.exports = { AuthorizationMiddleware };
+export default { AuthorizationMiddleware };

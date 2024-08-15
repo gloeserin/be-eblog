@@ -1,6 +1,6 @@
-const {Module} = require("@nestjs/common");
-const {CommentsController} = require("./comments.controller");
-const {CommentsService} = require("./comments.service");
+import { Module } from "@nestjs/common";
+import { CommentsController } from "./comments.controller";
+import { CommentsService } from "./comments.service";
 
 @Module({
     controllers: [CommentsController],

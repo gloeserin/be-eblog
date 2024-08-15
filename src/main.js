@@ -1,7 +1,8 @@
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module.js';
+import { join } from 'path';
 import * as bodyParser from 'body-parser';
-const { NestFactory } = require('@nestjs/core');
-const { AppModule } = require('./app.module.js');
-const { join } = require('path');
+
 
 
 
