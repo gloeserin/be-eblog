@@ -1,6 +1,6 @@
-import { Module } from "@nestjs/common";
-import { UserController } from "./user.controller";
-import { UserService } from "./user.service";
+const {Module} = require("@nestjs/common");
+const {UserController} = require("./user.controller");
+const {UserService} = require("./user.service");
 
 @Module({
     controllers: [UserController],
