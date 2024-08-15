@@ -6,4 +6,4 @@ const {CommentsService} = require("./comments.service");
     controllers: [CommentsController],
     providers: [CommentsService],
     })
-export class CategoryModule {}//coba tambahin ke si article say apanyaa? ubikin file module kayak gini buat si article
+export class CategoryModule {}
